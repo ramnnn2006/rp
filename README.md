@@ -61,9 +61,16 @@ rp/
 │   └── benchmark.py                  # 500-episode comparative evaluation harness
 ├── cag_delphi_geval_proofs.py        # Automated proof assertions for Theorems 1-3
 ├── audit_manuscript.py               # Anti-AI & burstiness verification scanner
-└── papers/
-    ├── papers_metadata.json          # Extracted metadata & abstracts for 15 papers
-    └── papers_metadata_2026.json     # Extracted metadata for 2026 contemporary papers
+├── papers/                           # Complete collection of 16 Literature PDFs
+│   ├── README.md                     # Direct paper catalog with links, venues, DOIs
+│   ├── Base_Lee_Kwon_2026_MADS_Diversity.pdf
+│   ├── P1_Canese_2021_MARL_Review.pdf ... P14_AgenticSciML.pdf
+│   ├── Vatsal_Healthcare_AgenticAI.pdf
+│   ├── papers_metadata.json          # Extracted metadata & abstracts for 15 papers
+│   └── papers_metadata_2026.json     # Extracted metadata for 2026 contemporary papers
+├── build_all_paper_pdfs.py           # Automated Chromium PDF compilation engine
+├── confidencellmsaiagents.xlsx       # Original literature dataset sheet
+└── Multi-Agent-Decision-Making-Research-Package.pdf # Executive research package
 ```
 
 ---
