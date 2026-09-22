@@ -1,0 +1,91 @@
+[
+  {
+    "tag": "Yu_DynTaskMAS",
+    "doi": "10.3390/electronics15112475",
+    "title": "Toward Scalable LLM-Based Multi-Agent Collaboration: A Dynamic Task Graph Approach with Asynchronous Parallel Execution",
+    "year": 2026,
+    "authors": [
+      "Junwei Yu",
+      "Yepeng Ding",
+      "Jiani Dai",
+      "Junjun Zheng",
+      "Jingchi Wu",
+      "Hiroyuki Sato"
+    ],
+    "abstract": "Deploying Large Language Models (LLMs) in collaborative multi-agent settings represents a promising frontier for complex AI problem-solving, yet the field lacks systematic mechanisms to manage the inherent coordination overhead and resource contention that arise at scale. Existing LLM-based Multi-Agent System (MAS) frameworks predominantly adopt sequential or loosely coupled execution models, which fail to exploit the parallelism potential of modern computing environments and limit overall system throughput. To bridge this gap, this paper presents DynTaskMAS, a framework that redefines task orchestration in LLM-based MASs through a dynamic task graph abstraction. Rather than treating tasks as static pipelines, DynTaskMAS continuously models task interdependencies at runtime, enabling opportunistic parallel execution while preserving logical correctness. The architecture integrates four synergistic components: a runtime task decomposition module that captures evolving dependencies among subtasks; a scheduling engine that dispatches ready tasks to available agents without centralized bottlenecks; a context propagation layer that maintains shared semantic state across concurrently executing agents; and a self-tuning workflow controller that adapts execution priorities based on observed system load. Together, these components address a core tension in LLM-based MAS design, balancing agent autonomy with coordinated efficiency. Evaluations across tasks of varying complexity confirm that DynTaskMAS delivers substantial gains in execution efficiency (21.3\u201333.0% reduction), resource utilization (from 65% to 88%), and agent scalability (3.47\u00d7 throughput with 16 concurrent agents) compared to sequential baselines. This work offers a generalizable architectural blueprint for next-generation LLM-based Multi-Agent Systems operating under real-world dynamic and resource-constrained conditions.",
+    "tldr": "DynTaskMAS is presented, a framework that redefines task orchestration in LLM-based MASs through a dynamic task graph abstraction, enabling opportunistic parallel execution while preserving logical correctness in LLM-based MASs."
+  },
+  {
+    "tag": "BWM_Ecommerce",
+    "doi": "10.3390/app16126093",
+    "title": "Reproducible Expert Weight Elicitation via LLM Multi-Agent Simulation: A Best\u2013Worst Method Decision Support Framework for AI-Driven E-Commerce Platform Evaluation",
+    "year": 2026,
+    "authors": [
+      "D. Chen",
+      "Yung-Hsin Chen",
+      "Bo-Siang Chen"
+    ],
+    "abstract": "The pervasive integration of artificial intelligence across e-commerce ecosystems has fundamentally transformed the competitive landscape, rendering systematic and reproducible platform evaluation frameworks an operational necessity rather than an academic exercise. Conventional multi-criteria decision analysis approaches for e-commerce evaluation remain structurally constrained by their dependency on human expert panels, which introduce recruitment costs, cognitive biases, limited reproducibility, and the practical infeasibility of assembling genuinely multidisciplinary panels spanning e-commerce strategy, machine learning engineering, and financial technology simultaneously. This study proposes a novel decision support framework that integrates Large Language Model (LLM) multi-agent simulation with the Best\u2013Worst Method (BWM) to derive reproducible priority weights for AI-driven e-commerce platform evaluation within a rigorous business intelligence architecture. Twelve domain-differentiated LLM agents\u2014organized into three expertise groups representing e-commerce management, AI and machine learning technology, and digital payment systems\u2014were instantiated with structured system prompts encoding professional domain knowledge and deployed across three independent simulation rounds to perform BWM pairwise comparisons across a comprehensive six-dimensional, 30-sub-criterion evaluation hierarchy. Inter-agent consensus was synthesized through geometric mean aggregation, with consistency verification conducted via BWM\u2019s xi* indicator and inter-round stability assessed through coefficient of variation analysis. Results reveal that Transaction Security and Trust achieves the highest dimension-level weight (w = 0.248), followed by AI Recommendation Effectiveness (w = 0.213), with Personal Data Protection (G = 0.0750), Recommendation Accuracy (G = 0.0607), and Transaction Transparency (G = 0.0549) emerging as the three highest globally ranked sub-criteria. The aggregated consistency indicator xi* = 0.062 confirms logical coherence of the multi-agent judgment consensus, and all dimension weights exhibit CV values below 2.8%, demonstrating exceptional inter-round stability. Spearman rank correlations among the three domain-expertise groups exceed 0.92, confirming strong inter-group convergence. Sensitivity analysis under perturbations of \u00b110% and \u00b120% demonstrates that the top-five priority indicators are structurally stable. This study establishes LLM multi-agent BWM simulation as a methodologically rigorous, institutionally accessible, and computationally reproducible alternative to traditional expert elicitation for complex platform evaluation tasks.",
+    "tldr": "This study establishes LLM multi-agent BWM simulation as a methodologically rigorous, institutionally accessible, and computationally reproducible alternative to traditional expert elicitation for complex platform evaluation tasks."
+  },
+  {
+    "tag": "Vatsal_Health",
+    "doi": "10.1109/ACCESS.2026.3651218",
+    "title": "Agentic AI in Healthcare and Medicine: A Seven-Dimensional Taxonomy for Empirical Evaluation of LLM-Based Agents",
+    "year": 2026,
+    "authors": [
+      "Shubham Vatsal",
+      "Harsh Dubey",
+      "Aditi Singh"
+    ],
+    "abstract": "Large Language Model (LLM)-based agents that plan, use tools and act has begun to shape healthcare and medicine. Reported studies demonstrate competence on various tasks ranging from EHR analysis and differential diagnosis to treatment planning and research workflows. Yet the literature largely consists of overviews which are either broad surveys or narrow dives into a single capability (e.g., memory, planning, reasoning), leaving healthcare work without a common frame. We address this by reviewing 49 studies using a seven-dimensional taxonomy: Cognitive Capabilities, Knowledge Management, Interaction Patterns, Adaptation & Learning, Safety & Ethics, Framework Typology and Core Tasks & Subtasks with 29 operational sub-dimensions. Using explicit inclusion and exclusion criteria and a labeling rubric (Fully Implemented \u2713, Partially Implemented $\\Delta $ , Not Implemented \u2717), we map each study to the taxonomy and report quantitative summaries of capability prevalence and co-occurrence patterns. Our empirical analysis surfaces clear asymmetries. For instance, the External Knowledge Integration sub-dimension under Knowledge Management is commonly realized (~76% \u2713) whereas Event-Triggered Activation sub-dimenison under Interaction Patterns is largely absent (~92% \u2717) and Drift Detection & Mitigation sub-dimension under Adaptation & Learning is rare (~98% \u2717). Architecturally, Multi-Agent Design sub-dimension under Framework Typology is the dominant pattern (~82% \u2713) while orchestration layers remain mostly partial. Across Core Tasks & Subtasks, information centric capabilities lead e.g., Medical Question Answering & Decision Support and Benchmarking & Simulation, while action and discovery oriented areas such as Treatment Planning & Prescription still show substantial gaps (~59% \u2717). Together, these findings provide an empirical baseline indicating that current agents excel at retrieval-grounded advising but require stronger adaptation and compliance platforms to move from early-stage systems to dependable systems.",
+    "tldr": "The findings provide an empirical baseline indicating that current agents excel at retrieval-grounded advising but require stronger adaptation and compliance platforms to move from early-stage systems to dependable systems."
+  },
+  {
+    "tag": "Sun_TextDetect",
+    "doi": "10.3390/informatics13040062",
+    "title": "Collaborative Multi-Agent Method for Zero-Shot LLM-Generated Text Detection",
+    "year": 2026,
+    "authors": [
+      "Gang Sun",
+      "Bowen Li",
+      "Ying Zhou",
+      "Yi Zhu",
+      "Ji-Peng Qiang"
+    ],
+    "abstract": "With the rapid proliferation of large language models (LLMs), distinguishing machine-generated text from human-authored content has become increasingly critical for ensuring content authenticity, academic integrity, and trust in information systems. However, detecting text generated by LLMs remains a challenging problem, particularly in zero-shot settings where labeled data and domain-specific tuning are unavailable. To address this challenge, in this paper, we propose a novel Collaborative Multi-Agent Zero-Shot Detection framework (CMA-ZSD). In contrast to existing methods based on watermarking, statistical heuristics, or neural classifiers, our CMA-ZSD employs three functionally heterogeneous agents that perform differentiated perturbations of the input text. By jointly modeling semantic consistency, grammatical normalization, and feature-level reconstruction, our method captures intrinsic asymmetries between human-authored and LLM-generated text. A semantic similarity evaluation mechanism, combined with majority voting, enables robust and interpretable detection decisions that balance individual agent autonomy with collective consensus. Extensive experiments across 11 domains demonstrate the effectiveness of our method, with its zero-shot detection achieving accuracy comparable to domain-finetuned models in specific domains such as Finance and Reddit-dli5.",
+    "tldr": "This paper proposes a novel Collaborative Multi-Agent Zero-Shot Detection framework that employs three functionally heterogeneous agents that perform differentiated perturbations of the input text and captures intrinsic asymmetries between human-authored and LLM-generated text."
+  },
+  {
+    "tag": "Nguyen_FactCheck",
+    "doi": "10.1016/j.icte.2026.02.008",
+    "title": "FACES: Facial Analysis with Compressed Efficient Systems",
+    "year": 2026,
+    "authors": [
+      "Romanela Laji\u0107",
+      "Peter Peer",
+      "Vitomir \u0160truc",
+      "Dong Seog Han",
+      "Bla\u017e Meden",
+      "\u017d. Emer\u0161i\u010d"
+    ],
+    "abstract": null,
+    "tldr": null
+  },
+  {
+    "tag": "COLLAB_LLM",
+    "doi": "10.9734/ajrcos/2026/v19i1811",
+    "title": "COLLAB-LLM: A Communication-Centric Role-Based Framework for Scalable Multi-Agent LLM Collaboration",
+    "year": 2026,
+    "authors": [
+      "Elham Albaroudi",
+      "M. Hatamleh",
+      "Sirin Mohammed Hejazi",
+      "A. Alshalabi",
+      "Taha Mansouri",
+      "Ali Alameer"
+    ],
+    "abstract": "Large Language Models (LLMs) are increasingly deployed in multi-agent systems; however, existing frameworks continue to suffer from communication ambiguity, coordination failures, and poor scalability as task complexity increases. This paper introduces COLLAB-LLM, a communication-centric, role-based framework designed to enable reliable and scalable collaboration among LLM agents. The framework combines a structured communication protocol, a hierarchical role architecture, and a dynamic distributed task-graph engine to support coordinated planning, efficient negotiation, and adaptive task execution. COLLAB-LLM is evaluated on over 120 complex, multi-step tasks spanning software engineering, business process automation, and scientific research synthesis. Task success is defined using task-specific completion criteria, with a task considered successful when the aggregate completion score exceeds 0.8. Under identical underlying LLM configurations, COLLAB-LLM achieves an 89% overall success rate, representing a 13\u201319% improvement over strong single-agent and multi-agent state-of-the-art baselines, with statistically significant gains in performance, communication efficiency, and robustness. Experimental results demonstrate that structured communication and role specialization substantially reduce ambiguity, improve collaboration quality, and enable scalable coordination for teams of up to eight agents. This work establishes foundational design principles for high-performing collaborative AI systems and provides a practical, reproducible pathway toward scalable, human-aligned multi-agent LLM architectures. All experimental artifacts, task definitions, prompts, and evaluation scripts will be released to support reproducibility.",
+    "tldr": "COLLAB-LLM is introduced, a communication-centric, role-based framework designed to enable reliable and scalable collaboration among LLM agents that establishes foundational design principles for high-performing collaborative AI systems and provides a practical, reproducible pathway toward scalable, human-aligned multi-agent LLM architectures."
+  }
+]

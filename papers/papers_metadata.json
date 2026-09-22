@@ -1,0 +1,228 @@
+[
+  {
+    "tag": "Base",
+    "doi": "10.3390/app16136715",
+    "title": "Differentiated Effects of Agent Diversity on Collective Decision-Making in LLM-Based Multi-Agent Delphi Systems",
+    "year": 2026,
+    "authors": [
+      "Namyeon Lee",
+      "O. Kwon"
+    ],
+    "abstract": "Large language model (LLM)-based multi-agent systems are increasingly being explored as tools for supporting structured collective decision-making, but it remains unclear how the diversity structure of agent groups affects decision-making performance. This study examined the effects of agent diversity in a Delphi-based multi-agent system by applying Harrison and Klein\u2019s framework of variety, separation, and disparity. An LLM-based Multi-Agent Delphi System (MADS) was implemented, and 11 agent-group conditions were constructed by manipulating personality-based variety, belief-orientation-based separation, and influence asymmetry. Each condition consisted of eight agents and was tested across four open-weight LLMs with repeated experimental runs. Performance was evaluated in terms of idea exploration extent, consensus quality, and consensus efficiency, using a human expert Delphi study as an external benchmark. The results showed that diversity had differentiated effects across performance dimensions. The maximum diversity group achieved the highest idea exploration but showed low consensus quality and efficiency, whereas the homogeneous group achieved stable consensus quality and efficiency but limited exploration. The separation diversity conditions formed Pareto-efficient alternatives, indicating balanced trade-offs between idea exploration and consensus. These findings indicate that agent diversity does not uniformly improve collective decision-making performance; instead, its appropriate structure depends on whether the task prioritizes exploration, consensus quality, or consensus efficiency.",
+    "openAccessPdf": "https://www.mdpi.com/2076-3417/16/13/6715/pdf?version=1783172906",
+    "tldr": "The findings indicate that agent diversity does not uniformly improve collective decision-making performance; instead, its appropriate structure depends on whether the task prioritizes exploration, consensus quality, or consensus efficiency."
+  },
+  {
+    "tag": "P1",
+    "doi": "10.3390/app11114948",
+    "title": "Multi-Agent Reinforcement Learning: A Review of Challenges and Applications",
+    "year": 2021,
+    "authors": [
+      "L. Canese",
+      "G. Cardarilli",
+      "L. Di Nunzio",
+      "R. Fazzolari",
+      "D. Giardino",
+      "M. Re",
+      "S. Span\u00f2"
+    ],
+    "abstract": "In this review, we present an analysis of the most used multi-agent reinforcement learning algorithms. Starting with the single-agent reinforcement learning algorithms, we focus on the most critical issues that must be taken into account in their extension to multi-agent scenarios. The analyzed algorithms were grouped according to their features. We present a detailed taxonomy of the main multi-agent approaches proposed in the literature, focusing on their related mathematical models. For each algorithm, we describe the possible application fields, while pointing out its pros and cons. The described multi-agent algorithms are compared in terms of the most important characteristics for multi-agent reinforcement learning applications\u2014namely, nonstationarity, scalability, and observability. We also describe the most common benchmark environments used to evaluate the performances of the considered methods.",
+    "openAccessPdf": "https://www.mdpi.com/2076-3417/11/11/4948/pdf?version=1622433748",
+    "tldr": "A detailed taxonomy of the main multi-agent approaches proposed in the literature, focusing on their related mathematical models is presented, including nonstationarity, scalability, and observability."
+  },
+  {
+    "tag": "P2",
+    "doi": "10.3390/computers10020016",
+    "title": "A Review of Agent-Based Programming for Multi-Agent Systems",
+    "year": 2021,
+    "authors": [
+      "R. C. Cardoso",
+      "Angelo Ferrando"
+    ],
+    "abstract": "Intelligent and autonomous agents is a subarea of symbolic artificial intelligence where these agents decide, either reactively or proactively, upon a course of action by reasoning about the information that is available about the world (including the environment, the agent itself, and other agents). It encompasses a multitude of techniques, such as negotiation protocols, agent simulation, multi-agent argumentation, multi-agent planning, and many others. In this paper, we focus on agent programming and we provide a systematic review of the literature in agent-based programming for multi-agent systems. In particular, we discuss both veteran (still maintained) and novel agent programming languages, their extensions, work on comparing some of these languages, and applications found in the literature that make use of agent programming.",
+    "openAccessPdf": "https://www.mdpi.com/2073-431X/10/2/16/pdf?version=1611742801",
+    "tldr": "This paper provides a systematic review of the literature in agent-based programming for multi-agent systems and discusses both veteran and novel agent programming languages, their extensions, work on comparing some of these languages, and applications found in the literature that make use of agent programming."
+  },
+  {
+    "tag": "P3",
+    "doi": "10.3390/app12125857",
+    "title": "CPN4M: Testing Multi-Agent Systems under Organizational Model Moise+ Using Colored Petri Nets",
+    "year": 2022,
+    "authors": [
+      "E. Gon\u00e7alves",
+      "Ricardo Arend Machado",
+      "B. C. Rodrigues",
+      "D. Adamatti"
+    ],
+    "abstract": "Multi-agent systems (MASs) are distributed and complex software that demand specific software engineering features. Testing is a critical phase when validating software, and it is also difficult to conceive and execute. Designing systems under a multi-agent paradigm is even more difficult because of properties such as autonomy, reactivity, pro-activity, and social skills. Any multi-agent system has at least three main dimensions: the individual and social levels and communication interfaces. Considering an approach for testing a dimension specifically, we deal with the social level as an organizational model in this paper. It imposes some restrictions on agents\u2019 behavior through a set of behavioral constraints. In this sense, an error in the organization can occur when the allocated resources are not enough for executing plans and reaching goals. This work aims to present a whole framework for analyzing and testing MAS social level under organizational model Moise+. This framework uses a Moise+ specifications set as information artifact mapped in a colored Petri net (CPN) model, named CPN4M, as a test case generation mechanism. CPN4M uses two different test adequacy criteria: all-paths and state-transition path. In this paper, we have formalized the transition from Moise+ to CPN, the procedures for test case generation, and executed some tests in a case study. The results indicate that this methodology can increase the correction degree for a social level in a multi-agent system specified by a Moise+ model, indicating the system context that can lead the MAS for failures.",
+    "openAccessPdf": "https://www.mdpi.com/2076-3417/12/12/5857/pdf?version=1654753915",
+    "tldr": "The results indicate that this methodology can increase the correction degree for a social level in a multi-agent system specified by a Moise+ model, indicating the system context that can lead the MAS for failures."
+  },
+  {
+    "tag": "P4",
+    "doi": "10.3390/app13031936",
+    "title": "Decoupled Monte Carlo Tree Search for Cooperative Multi-Agent Planning",
+    "year": 2023,
+    "authors": [
+      "O. Asik",
+      "Fatma Ba\u015fak Aydemir",
+      "H. L. Akin"
+    ],
+    "abstract": "The number of agents exponentially increases the complexity of a cooperative multi-agent planning problem. Decoupled planning is one of the viable approaches to reduce this complexity. By integrating decoupled planning with Monte Carlo Tree Search, we present a new scalable planning approach. The search tree maintains the updates of the individual actions of each agent separately. However, this separation brings coordination and action synchronization problems. When the agent does not know the action of the other agent, it uses the returned reward to deduce the desirability of its action. When a deterministic action selection policy is used in the Monte Carlo Tree Search algorithm, the actions of agents are synchronized. Of all possible action combinations, only some of them are evaluated. We show the effect of action synchronization on different problems and propose stochastic action selection policies. We also propose a combined method as a pruning step in centralized planning to address the coordination problem in decoupled planning. We create a centralized search tree with a subset of joint actions selected by the evaluation of decoupled planning. We empirically show that decoupled planning has a similar performance compared to a central planning algorithm when stochastic action selection is used in repeated matrix games and multi-agent planning problems. We also show that the combined method improves the performance of the decoupled method in different problems. We compare the proposed method to a decoupled method in regard to a warehouse commissioning problem. Our method achieved more than 10% improvement in performance.",
+    "openAccessPdf": "https://www.mdpi.com/2076-3417/13/3/1936/pdf?version=1675327021",
+    "tldr": "It is empirically show that decoupled planning has a similar performance compared to a central planning algorithm when stochastic action selection is used in repeated matrix games and multi-agent planning problems and a combined method as a pruning step in centralized planning is proposed."
+  },
+  {
+    "tag": "P5",
+    "doi": "10.3390/info14060348",
+    "title": "A Review of Platforms for the Development of Agent Systems",
+    "year": 2020,
+    "authors": [
+      "Zofia Wrona",
+      "Wojciech Buchwald",
+      "M. Ganzha",
+      "M. Paprzycki",
+      "F. Leon",
+      "Noman Noor",
+      "Constantin-Valentin Pal"
+    ],
+    "abstract": "Agent-based computing remains an active field of research with the goal of building (semi-)autonomous software for dynamic ecosystems. Today, this task should be realized using dedicated, specialized frameworks. Over almost 40 years, multiple agent platforms have been developed. While many of them have been \u201cabandoned\u201d, others remain active, and new ones are constantly being released. This contribution presents a historical perspective on the domain and an up-to-date review of the existing agent platforms. It aims to serve as a reference point for anyone interested in developing agent systems. Therefore, the main characteristics of the included agent platforms are summarized, and selected links to projects where they have been used are provided. Furthermore, the described platforms are divided into general-purpose platforms and those targeting specific application domains. The focus of the contribution is on platforms that can be judged as being under active development. Information about \u201chistorical platforms\u201d and platforms with an unclear status is included in a dedicated website accompanying this work.",
+    "openAccessPdf": "https://www.mdpi.com/2078-2489/14/6/348/pdf?version=1687682527",
+    "tldr": "This contribution presents a historical perspective on the domain and an up-to-date review of the existing agent platforms to serve as a reference point for anyone interested in developing agent systems."
+  },
+  {
+    "tag": "P6",
+    "doi": "10.3390/app13053060",
+    "title": "Manufacturer Channel Encroachment and Evolution in E-Platform Supply Chain: An Agent-Based Model",
+    "year": 2023,
+    "authors": [
+      "Rongquan. Ma",
+      "Tian-Jian Yang"
+    ],
+    "abstract": "Manufacturer channel encroachment is a common phenomenon in the current e-commerce supply chain, which has been well studied. This study develops a multi-agent-based model of the e-platform supply chain to analyse manufacturers\u2019 channel encroachment strategies and supply chain evolution. Through both direct sales channels and e-commerce platforms, manufacturers can sell two complementary products of varying quality. Consumers who have preferences compare the pricing information gathered from manufacturers through different channels before selecting the one that generates the best utility. At the end of each period, the manufacturers make a price adjustment using the genetic algorithm. We look at the supply chain evolution process through multi-period simulations and discuss the factors that influence encroachment decisions. We find that manufacturers\u2019 channel encroachment is detrimental to the profitability of the e-commerce platform. Consumers\u2019 channel preferences and quality preferences benefit the e-commerce platform and can discourage manufacturers\u2019 encroachment decisions. In addition, increases in encroachment costs and commission rates can reduce manufacturers\u2019 propensity for channel encroachment.",
+    "openAccessPdf": "https://www.mdpi.com/2076-3417/13/5/3060/pdf?version=1677499657",
+    "tldr": "A multi-agent-based model of the e-platform supply chain is developed to analyse manufacturers\u2019 channel encroachment strategies and supply chain evolution and finds that manufacturers\u201d channel encroaching is detrimental to the profitability of the E-commerce platform."
+  },
+  {
+    "tag": "P7",
+    "doi": "10.1109/ACCESS.2024.3409051",
+    "title": "Multi-Agent Systems: A Survey About Its Components, Framework and Workflow",
+    "year": 2024,
+    "authors": [
+      "D. Maldonado",
+      "E. Cruz",
+      "J. A. Torres",
+      "Patricio J. Cruz",
+      "Silvana del Pilar Gamboa Benitez"
+    ],
+    "abstract": "With the rapid technological advancements and the ever-evolving complex systems, the identification and integration of the components and resources for the functioning of multi-agent systems (MAS) are crucial tasks. However, difficulties arise due to the complexity of not having reference frameworks that normalize their implementation. Therefore, in this survey, we propose the FC-MAS (Framework-Components in Multi-Agent System) model as a conceptual framework designed to simplify comprehension and standardization in incorporating the required functions and components for the deployment and operation of MAS in engineering applications. This model comprises five abstract layers, each of which serves a specific purpose and encompasses the details and resources required to operate MAS. Furthermore, we propose a structured workflow for centralized and distributed MAS schemes with a set of related activities that integrate the fundamental steps and stages for the successful implementation of MAS. Finally, this work discusses potential directions for future research, including a deeper exploration of essential components, the establishment of terminology standards across various domains, and the refinement of the proposed model to enhance its applicability and relevance across a broader spectrum of contexts.",
+    "openAccessPdf": "https://doi.org/10.1109/access.2024.3409051",
+    "tldr": "The FC-MAS (Framework-Components in Multi-Agent System) model is proposed as a conceptual framework designed to simplify comprehension and standardization in incorporating the required functions and components for the deployment and operation of MAS in engineering applications."
+  },
+  {
+    "tag": "P8",
+    "doi": "10.1007/s44336-024-00009-2",
+    "title": "A survey on LLM-based multi-agent systems: workflow, infrastructure, and challenges",
+    "year": 2024,
+    "authors": [
+      "Xinyi Li",
+      "Sai Wang",
+      "Si-Qi Zeng",
+      "Yu Wu",
+      "Yi Yang"
+    ],
+    "abstract": "The pursuit of more intelligent and credible autonomous systems, akin to human society, has been a long-standing endeavor for humans. Leveraging the exceptional reasoning and planning capabilities of large language models (LLMs), LLM-based agents have been proposed and have achieved remarkable success across a wide array of tasks. Notably, LLM-based multi-agent systems (MAS) are considered a promising pathway towards realizing general artificial intelligence that is equivalent to or surpasses human-level intelligence. In this paper, we present a comprehensive survey of these studies, offering a systematic review of LLM-based MAS. Adhering to the workflow of LLM-based multi-agent systems, we synthesize a general structure encompassing five key components: profile, perception, self-action, mutual interaction, and evolution. This unified framework encapsulates much of the previous work in the field. Furthermore, we illuminate the extensive applications of LLM-based MAS in two principal areas: problem-solving and world simulation. Finally, we discuss in detail several contemporary challenges and provide insights into potential future directions in this domain.",
+    "openAccessPdf": "https://doi.org/10.1007/s44336-024-00009-2",
+    "tldr": "A comprehensive survey of LLM-based multi-agent systems is presented, offering a systematic review of these studies, and a general structure encompassing five key components: profile, perception, self-action, mutual interaction, and evolution is synthesized."
+  },
+  {
+    "tag": "P9",
+    "doi": "10.3390/systems13080641",
+    "title": "AgentsBench: A Multi-Agent LLM Simulation Framework for Legal Judgment Prediction",
+    "year": 2025,
+    "authors": [
+      "Cong Jiang",
+      "Xiaolei Yang"
+    ],
+    "abstract": "The justice system has increasingly applied AI techniques for legal judgment to enhance efficiency. However, most AI techniques focus on decision-making outcomes, failing to capture the deliberative nature of the real-world judicial process. To address these challenges, we propose a large language model-based multi-agent framework named AgentsBench. Our approach leverages multiple LLM-driven agents that simulate the discussion process of the Chinese judicial bench, which is often composed of professional and lay judge agents. We conducted experiments on a legal judgment prediction task, and the results show that our framework outperforms existing LLM-based methods in terms of performance and decision quality. By incorporating these elements, our framework reflects real-world judicial processes more closely, enhancing accuracy, fairness, and societal consideration. While the simulation is based on China\u2019s lay judge system, our framework is generalizable and can be adapted to various legal scenarios and other legal systems involving collective decision-making processes.",
+    "openAccessPdf": "https://www.mdpi.com/2079-8954/13/8/641/pdf?version=1754013777",
+    "tldr": "This work proposes a large language model-based multi-agent framework named AgentsBench that leverages multiple LLM-driven agents that simulate the discussion process of the Chinese judicial bench, which is often composed of professional and lay judge agents."
+  },
+  {
+    "tag": "P10",
+    "doi": "10.3390/smartcities8010019",
+    "title": "LLM Agents for Smart City Management: Enhancing Decision Support Through Multi-Agent AI Systems",
+    "year": 2025,
+    "authors": [
+      "A. Kalyuzhnaya",
+      "Sergey Mityagin",
+      "E. Lutsenko",
+      "Andrey Getmanov",
+      "Yaroslav Aksenkin",
+      "Kamil Fatkhiev",
+      "Kirill Fedorin",
+      "Nikolay O. Nikitin",
+      "N. Chichkova",
+      "V. Vorona",
+      "A. Boukhanovsky"
+    ],
+    "abstract": "This study investigates the implementation of LLM agents in smart city management, leveraging both the inherent language processing abilities of LLMs and the distributed problem solving capabilities of multi-agent systems for the improvement of urban decision making processes. A multi-agent system architecture combines LLMs with existing urban information systems to process complex queries and generate contextually relevant responses for urban planning and management. The research is focused on three main hypotheses testing: (1) LLM agents\u2019 capability for effective routing and processing diverse urban queries, (2) the effectiveness of Retrieval-Augmented Generation (RAG) technology in improving response accuracy when working with local knowledge and regulations, and (3) the impact of integrating LLM agents with existing urban information systems. Our experimental results, based on a comprehensive validation dataset of 150 question\u2013answer pairs, demonstrate significant improvements in decision support capabilities. The multi-agent system achieved pipeline selection accuracy of 94\u201399% across different models, while the integration of RAG technology improved response accuracy by 17% for strategic development queries and 55% for service accessibility questions. The combined use of document databases and service APIs resulted in the highest performance metrics (G-Eval scores of 0.68\u20130.74) compared to standalone LLM responses (0.30\u20130.38). Using St. Petersburg\u2019s Digital Urban Platform as a testbed, we demonstrate the practical applicability of this approach to create integrated city management systems with support complex urban decision making processes. This research contributes to the growing field of AI-enhanced urban management by providing empirical evidence of LLM agents\u2019 effectiveness in processing heterogeneous urban data and supporting strategic planning decisions. Our findings suggest that LLM-based multi-agent systems can significantly enhance the efficiency and accuracy of urban decision making while maintaining high relevance in responses.",
+    "openAccessPdf": "https://www.mdpi.com/2624-6511/8/1/19/pdf?version=1737737853",
+    "tldr": "This research contributes to the growing field of AI-enhanced urban management by providing empirical evidence of LLM agents\u2019 effectiveness in processing heterogeneous urban data and supporting strategic planning decisions."
+  },
+  {
+    "tag": "P11",
+    "doi": "10.1109/ACCESS.2025.3532853",
+    "title": "Agentic AI: Autonomous Intelligence for Complex Goals\u2014A Comprehensive Survey",
+    "year": 2025,
+    "authors": [
+      "D. Acharya",
+      "Karthigeyan Kuppan",
+      "B. Divya"
+    ],
+    "abstract": "Agentic AI, an emerging paradigm in artificial intelligence, refers to autonomous systems designed to pursue complex goals with minimal human intervention. Unlike traditional AI, which depends on structured instructions and close oversight, Agentic AI demonstrates adaptability, advanced decision-making capabilities and self-sufficiency, enabling it to operate dynamically in evolving environments. This survey thoroughly explores the foundational concepts, unique characteristics, and core methodologies driving the development of Agentic AI. We examine its current and potential applications across various fields, including healthcare, finance, and adaptive software systems, emphasizing the advantages of deploying agentic systems in real-world scenarios. The paper also addresses the ethical challenges posed by Agentic AI, proposing solutions for goal alignment, resource constraints, and environmental adaptability. We outline a framework for safely and effectively integrating Agentic AI into society, highlighting the need for further research on ethical considerations to ensure beneficial societal impacts. This survey serves as a comprehensive introduction to Agentic AI, guiding researchers, developers, and policymakers in engaging with its transformative potential responsibly and creatively.",
+    "openAccessPdf": "https://doi.org/10.1109/access.2025.3532853",
+    "tldr": "This survey thoroughly explores the foundational concepts, unique characteristics, and core methodologies driving the development of Agentic AI, and outlines a framework for safely and effectively integrating Agentic AI into society."
+  },
+  {
+    "tag": "P12",
+    "doi": "10.3390/ai7060219",
+    "title": "Agentic AI: A Perspective on Architecture, Frameworks and Applications",
+    "year": 2026,
+    "authors": [
+      "Priyadarshini Raghavendra",
+      "Manob Saikia"
+    ],
+    "abstract": "This review examines the evolution and architectural foundations of agentic artificial intelligence (AI), with a focus on collaborative multi-agent systems for complex task execution. The paper analyzes the core components, agent architectures, coordination mechanisms, application domains, and deployment challenges that enable autonomous reasoning and decision-making in real-world environments. To complement the survey, a comparative cryptocurrency market analysis case study is conducted using CrewAI, LangChain, and LangGraph focusing on workflow orchestration characteristics such as tool invocation, task transitions, orchestration depth, and memory integration. The findings are further supported by evidence from real-world financial applications reported in the literature, indicating productivity gains of 50\u201380% in financial data tasks and up to 20% improvement in stock prediction accuracy, highlighting the growing impact of multi-agent AI systems in market intelligence. The study highlights how architectural design choices influence reasoning continuity, coordination behavior, scalability, and system reliability, providing practical guidance for the design and deployment of agentic AI systems in complex, data-intensive domains.",
+    "openAccessPdf": "https://www.mdpi.com/2673-2688/7/6/219/pdf?version=1781443082",
+    "tldr": "The study highlights how architectural design choices influence reasoning continuity, coordination behavior, scalability, and system reliability, providing practical guidance for the design and deployment of agentic AI systems in complex, data-intensive domains."
+  },
+  {
+    "tag": "P13",
+    "doi": "10.3390/fi18060326",
+    "title": "LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns",
+    "year": 2026,
+    "authors": [
+      "Yi-Wen Zhu",
+      "Lihe Liu",
+      "Jiaqian Yu",
+      "Dingyan Zhang"
+    ],
+    "abstract": "The proliferation of large language model (LLM) agents has enabled increasingly complex multi-step automation; however, composing multiple agents into coherent systems introduces significant orchestration challenges that remain poorly documented. This survey examines LLM-based multi-agent orchestration from 2023 through early 2026 (literature cutoff: March 2026), with explicit attention to the evidence hierarchy used to interpret deployment claims. We propose a three-topology, one-adaptivity taxonomy\u2014centralized, decentralized, and hierarchical coordination topologies, each optionally augmented with a dynamic\u2013adaptive control axis\u2014grounded in classical multi-agent systems theory and recent empirical evidence. We compare six leading frameworks (LangGraph, CrewAI, AutoGen/Microsoft Agent Framework, OpenAI Agents SDK, MetaGPT, and DSPy) along axes directly relevant to practitioners: state-management granularity, token-cost structure, failure-recovery options, and design philosophy. The emerging protocol stack is examined in terms of why MCP (agent-to-tool) and A2A (agent-to-agent) occupy complementary layers, how the ACP\u2013A2A merger signals protocol convergence, and where ANP\u2019s decentralized-discovery design fits. Production design considerations\u2014state management, task planning, error handling, scalability, and security\u2014are evaluated with reference to published benchmarks. Vendor-reported figures are marked \u2020 throughout and held to a documented evidence hierarchy, which separates them from peer-reviewed and government-evaluator measurements. We close by identifying eight open challenges and proposing a six-dimension evaluation framework for multi-agent coordination quality. This paper offers practitioners a decision framework covering taxonomy, framework selection, protocol adoption, and early operational pilots.",
+    "openAccessPdf": "https://doi.org/10.3390/fi18060326",
+    "tldr": "A three-topology, one-adaptivity, one-adaptivity taxonomy is proposed\u2014centralized, decentralized, and hierarchical coordination topologies, each optionally augmented with a dynamic\u2013adaptive control axis\u2014grounded in classical multi-agent systems theory and recent empirical evidence."
+  },
+  {
+    "tag": "P14",
+    "doi": "10.1038/s44387-026-00102-5",
+    "title": "AgenticSciML: collaborative multi-agent systems for emergent discovery in scientific machine learning",
+    "year": 2025,
+    "authors": [
+      "Qile Jiang",
+      "G. Karniadakis"
+    ],
+    "abstract": "Scientific Machine Learning (SciML) integrates data-driven inference with physical modeling to solve complex problems in science and engineering. However, the design of SciML architectures, loss formulations, and training strategies remains an expert-driven research process, requiring extensive experimentation and problem-specific insights. Here, we introduce AgenticSciML, a collaborative multi-agent system in which over 10 specialized AI agents collaborate to propose, critique, and refine SciML solutions through structured reasoning and iterative evolution. The framework integrates structured debate, retrieval-augmented method memory, and ensemble-guided evolutionary search, enabling the agents to generate and assess new hypotheses about architectures and optimization procedures. Across physics-informed learning and operator learning tasks, the framework discovers solution methods that outperform single-agent and human-designed baselines by up to four orders of magnitude in error reduction. The agents produce novel strategies\u2014including adaptive mixture-of-experts architectures, decomposition-based PINNs, and physics-informed operator learning models\u2014that do not appear explicitly in the curated knowledge base. These results show that collaborative reasoning among AI agents can yield emergent methodological innovation, suggesting a path toward scalable, transparent, and autonomous discovery in scientific computing.",
+    "openAccessPdf": "https://www.nature.com/articles/s44387-026-00102-5_reference.pdf",
+    "tldr": "AgenticSciML is introduced, a collaborative multi-agent system in which over 10 specialized AI agents collaborate to propose, critique, and refine SciML solutions through structured reasoning and iterative evolution, suggesting a path toward scalable, transparent, and autonomous discovery in scientific computing."
+  }
+]
