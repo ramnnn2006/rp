@@ -1,0 +1,26 @@
+{
+  "No G-Eval (Entropy + Agree Only)": {
+    "w_entropy": 0.45,
+    "w_agreement": 0.55,
+    "w_geval": 0.0,
+    "accuracy_pct": 86.8,
+    "avg_tokens": 3032,
+    "avg_geval_score": 0.657
+  },
+  "Balanced G-Eval (Default CAG-Delphi)": {
+    "w_entropy": 0.35,
+    "w_agreement": 0.45,
+    "w_geval": 0.2,
+    "accuracy_pct": 86.8,
+    "avg_tokens": 3032,
+    "avg_geval_score": 0.657
+  },
+  "High G-Eval Weight": {
+    "w_entropy": 0.25,
+    "w_agreement": 0.35,
+    "w_geval": 0.4,
+    "accuracy_pct": 86.8,
+    "avg_tokens": 3032,
+    "avg_geval_score": 0.657
+  }
+}

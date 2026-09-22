@@ -1,0 +1,26 @@
+{
+  "homogeneous": {
+    "separation_s": 0.0,
+    "variety_v": 0.0,
+    "disparity_d": 0.0,
+    "consensus_quality_q": 0.0
+  },
+  "high_variety_only": {
+    "separation_s": 0.0,
+    "variety_v": 0.75,
+    "disparity_d": 0.0,
+    "consensus_quality_q": 0.0838
+  },
+  "high_disparity": {
+    "separation_s": 0.8047,
+    "variety_v": 0.0,
+    "disparity_d": 1.0392,
+    "consensus_quality_q": 0.3581
+  },
+  "pareto_separation": {
+    "separation_s": 0.8047,
+    "variety_v": 0.0,
+    "disparity_d": 0.0,
+    "consensus_quality_q": 0.8047
+  }
+}
