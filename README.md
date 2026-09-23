@@ -1,15 +1,11 @@
 # CAG-Delphi: Confidence-Adaptive Gated Consultation in LLM Multi-Agent Systems
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Paper Status](https://img.shields.io/badge/IEEE-Conference%20Ready-success.svg)]()
-
 > **Research Repository for:** *CAG-Delphi: Confidence-Adaptive Gated Consultation and Pareto-Optimal Diversity in LLM Multi-Agent Decision Systems*  
 > **Theoretical Foundations:** Grounded directly in **Lee & Kwon (2026)**, **Kalyuzhnaya et al. (2025)**, **Asik et al. (2023)**, **Zhu et al. (2026)**, and **Li et al. (2024)**.
 
 ---
 
-## 📌 Executive Summary
+## Executive Summary
 
 Current Large Language Model Multi-Agent Systems (LLM-MAS) suffer from a fundamental architectural flaw:
 > **The Unconditional Consultation Dilemma:** Multi-agent collaboration operates as a static, always-on graph. Every decision problem unconditionally activates full peer debate or multi-round iterative Delphi polling, paying an exorbitant **$4\times\text{ to }15\times$ token tax** and risking **debate degeneration** (peer noise overturning an already-correct solo decision).
@@ -21,7 +17,7 @@ Current Large Language Model Multi-Agent Systems (LLM-MAS) suffer from a fundame
 
 ---
 
-## 🔬 Key Empirical Findings Across 500 Multi-Domain Episodes
+## Key Empirical Findings Across 500 Multi-Domain Episodes
 
 Calibrated to benchmarks in legal judgment (Jiang & Yang, 2025), municipal management (Kalyuzhnaya et al., 2025), and general reasoning (Lee & Kwon, 2026):
 
@@ -44,7 +40,7 @@ CAG-Delphi (Ours, tau=0.74)    86.80         3,032          3.74            0.65
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 rp/
@@ -75,7 +71,7 @@ rp/
 
 ---
 
-## 🚀 Quickstart & Execution
+## Quickstart & Execution
 
 Run the formal mathematical proof assertions:
 ```bash
@@ -94,7 +90,7 @@ python3 audit_manuscript.py CAG_Delphi_Conference_Paper.md
 
 ---
 
-## 📜 Citations & Literature Corpus
+## Citations & Literature Corpus
 
 This architecture is derived strictly from the following core peer-reviewed corpus:
 1. **Lee, N. & Kwon, O. (2026).** Differentiated Effects of Agent Diversity on Collective Decision-Making in LLM-Based Multi-Agent Delphi Systems. *Applied Sciences*, 16(13), 6715.
