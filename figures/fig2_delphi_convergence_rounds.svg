@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" style="background:#ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <rect width="800" height="500" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="400" y="40" font-size="20" font-weight="bold" text-anchor="middle" fill="#0f172a">Figure 2: Consensus Agreement (Kendall's W) Across Delphi Rounds</text>
+  <text x="400" y="65" font-size="13" text-anchor="middle" fill="#64748b">Comparison of 4 diversity configurations (Lee &amp; Kwon 2026 Model)</text>
+
+  <!-- Grid -->
+  <g stroke="#f1f5f9" stroke-width="1.5">
+    <line x1="120" y1="110" x2="720" y2="110"/>
+    <line x1="120" y1="180" x2="720" y2="180"/>
+    <line x1="120" y1="250" x2="720" y2="250"/>
+    <line x1="120" y1="320" x2="720" y2="320"/>
+    <line x1="120" y1="390" x2="720" y2="390"/>
+  </g>
+
+  <!-- Axes -->
+  <line x1="120" y1="390" x2="720" y2="390" stroke="#334155" stroke-width="2"/>
+  <line x1="120" y1="110" x2="120" y2="390" stroke="#334155" stroke-width="2"/>
+
+  <!-- Y-Axis (Agreement W: 0.0 to 1.0) -->
+  <text x="105" y="395" font-size="12" text-anchor="end" fill="#475569">0.00</text>
+  <text x="105" y="325" font-size="12" text-anchor="end" fill="#475569">0.25</text>
+  <text x="105" y="255" font-size="12" text-anchor="end" fill="#475569">0.50</text>
+  <text x="105" y="185" font-size="12" text-anchor="end" fill="#475569">0.75</text>
+  <text x="105" y="115" font-size="12" text-anchor="end" fill="#475569">1.00</text>
+  <text x="50" y="250" font-size="14" font-weight="bold" fill="#1e293b" transform="rotate(-90 50 250)" text-anchor="middle">Consensus Agreement (Kendall's W)</text>
+
+  <!-- Target Agreement Threshold line -->
+  <line x1="120" y1="185" x2="720" y2="185" stroke="#10b981" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <text x="715" y="175" font-size="11" font-weight="bold" fill="#047857" text-anchor="end">Target Consensus Threshold (W &gt;= 0.75)</text>
+
+  <!-- X-Axis Rounds (Round 1, Round 2, Round 3) -->
+  <text x="220" y="420" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e293b">Round 1 (Initial)</text>
+  <text x="440" y="420" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e293b">Round 2 (Rebuttal)</text>
+  <text x="660" y="420" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e293b">Round 3 (Consensus)</text>
+
+  <!-- Line 1: Pareto Separation (Ours) -> R1: 0.68 (y=200), R2: 0.85 (y=152), R3: 0.94 (y=127) -->
+  <polyline points="220,200 440,152 660,127" fill="none" stroke="#10b981" stroke-width="3.5"/>
+  <circle cx="220" cy="200" r="6" fill="#10b981"/>
+  <circle cx="440" cy="152" r="8" fill="#10b981" stroke="#047857" stroke-width="2"/>
+  <circle cx="660" cy="127" r="6" fill="#10b981"/>
+  <text x="455" y="145" font-size="12" font-weight="bold" fill="#047857">Early Exit Trigger (W=0.85 &gt;= 0.75)</text>
+
+  <!-- Line 2: Homogeneous (Rapid convergence, low exploration) -> R1: 0.78 (y=172), R2: 0.92 (y=132), R3: 0.96 (y=121) -->
+  <polyline points="220,172 440,132 660,121" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4"/>
+  <circle cx="220" cy="172" r="5" fill="#3b82f6"/>
+  <circle cx="440" cy="132" r="5" fill="#3b82f6"/>
+  <circle cx="660" cy="121" r="5" fill="#3b82f6"/>
+
+  <!-- Line 3: High Variety (Personality Friction, fails to converge) -> R1: 0.38 (y=284), R2: 0.49 (y=253), R3: 0.54 (y=239) -->
+  <polyline points="220,284 440,253 660,239" fill="none" stroke="#ef4444" stroke-width="2"/>
+  <circle cx="220" cy="284" r="5" fill="#ef4444"/>
+  <circle cx="440" cy="253" r="5" fill="#ef4444"/>
+  <circle cx="660" cy="239" r="5" fill="#ef4444"/>
+
+  <!-- Legend -->
+  <g transform="translate(180, 450)">
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#10b981" stroke-width="3"/>
+    <text x="35" y="4" font-size="12" fill="#1e293b" font-weight="bold">Pareto Separation with Early Exit (Ours)</text>
+
+    <line x1="310" y1="0" x2="340" y2="0" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4"/>
+    <text x="345" y="4" font-size="12" fill="#1e293b">Homogeneous (Echo Chamber)</text>
+
+    <line x1="530" y1="0" x2="560" y2="0" stroke="#ef4444" stroke-width="2"/>
+    <text x="565" y="4" font-size="12" fill="#1e293b">High Variety (Debate Deadlock)</text>
+  </g>
+</svg>

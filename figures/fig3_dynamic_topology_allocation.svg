@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" style="background:#ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <rect width="800" height="450" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="400" y="40" font-size="20" font-weight="bold" text-anchor="middle" fill="#0f172a">Figure 3: Runtime Dynamic Topology Allocation Across 500 Queries</text>
+  <text x="400" y="65" font-size="13" text-anchor="middle" fill="#64748b">Autonomous routing based on epistemic confidence C(x)</text>
+
+  <!-- 3 Cards -->
+  <!-- Card 1: Solo Star -->
+  <g transform="translate(80, 100)">
+    <rect width="190" height="280" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+    <rect width="190" height="50" rx="10" fill="#e2e8f0"/>
+    <text x="95" y="32" font-size="15" font-weight="bold" fill="#0f172a" text-anchor="middle">Solo Star</text>
+    <text x="95" y="90" font-size="32" font-weight="bold" fill="#3b82f6" text-anchor="middle">20.4%</text>
+    <text x="95" y="115" font-size="12" fill="#64748b" text-anchor="middle">102 of 500 queries</text>
+    <line x1="20" y1="135" x2="170" y2="135" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="25" y="160" font-size="12" fill="#334155">• Confidence: &gt;= 0.74</text>
+    <text x="25" y="185" font-size="12" fill="#334155">• Peers Consulted: 0</text>
+    <text x="25" y="210" font-size="12" fill="#334155">• Avg Tokens: 380</text>
+    <text x="25" y="235" font-size="12" fill="#334155">• Latency: 0.84s</text>
+    <text x="25" y="260" font-size="12" font-weight="bold" fill="#059669">✓ 0 peer tokens wasted</text>
+  </g>
+
+  <!-- Card 2: Dyadic Challenger -->
+  <g transform="translate(305, 100)">
+    <rect width="190" height="280" rx="10" fill="#f8fafc" stroke="#3b82f6" stroke-width="2"/>
+    <rect width="190" height="50" rx="10" fill="#dbeafe"/>
+    <text x="95" y="32" font-size="15" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Dyadic Challenger</text>
+    <text x="95" y="90" font-size="32" font-weight="bold" fill="#1d4ed8" text-anchor="middle">38.2%</text>
+    <text x="95" y="115" font-size="12" fill="#64748b" text-anchor="middle">191 of 500 queries</text>
+    <line x1="20" y1="135" x2="170" y2="135" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="25" y="160" font-size="12" fill="#334155">• Confidence: 0.50 - 0.74</text>
+    <text x="25" y="185" font-size="12" fill="#334155">• Peers Consulted: 1</text>
+    <text x="25" y="210" font-size="12" fill="#334155">• Avg Tokens: 660</text>
+    <text x="25" y="235" font-size="12" fill="#334155">• Latency: 1.79s</text>
+    <text x="25" y="260" font-size="12" font-weight="bold" fill="#059669">✓ Adversarial checking</text>
+  </g>
+
+  <!-- Card 3: Decoupled Delphi -->
+  <g transform="translate(530, 100)">
+    <rect width="190" height="280" rx="10" fill="#f8fafc" stroke="#10b981" stroke-width="2"/>
+    <rect width="190" height="50" rx="10" fill="#d1fae5"/>
+    <text x="95" y="32" font-size="15" font-weight="bold" fill="#047857" text-anchor="middle">Decoupled Delphi</text>
+    <text x="95" y="90" font-size="32" font-weight="bold" fill="#047857" text-anchor="middle">41.4%</text>
+    <text x="95" y="115" font-size="12" fill="#64748b" text-anchor="middle">207 of 500 queries</text>
+    <line x1="20" y1="135" x2="170" y2="135" stroke="#a7f3d0" stroke-width="1"/>
+    <text x="25" y="160" font-size="12" fill="#334155">• Confidence: &lt; 0.50</text>
+    <text x="25" y="185" font-size="12" fill="#334155">• Peers Consulted: 4</text>
+    <text x="25" y="210" font-size="12" fill="#334155">• Avg Tokens: 980</text>
+    <text x="25" y="235" font-size="12" fill="#334155">• Latency: 2.12s</text>
+    <text x="25" y="260" font-size="12" font-weight="bold" fill="#059669">✓ Full Separation panel</text>
+  </g>
+</svg>
