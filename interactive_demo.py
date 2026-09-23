@@ -40,7 +40,8 @@ def run_interactive_demo():
     print("  Grounded in Lee & Kwon (2026) & Kalyuzhnaya et al. (2025)")
     print("=" * 80)
 
-    gater = EpistemicConfidenceGater(tau=0.74)
+    # Calibrated to optimal operating point tau = 0.65 from empirical Pareto sweep
+    gater = EpistemicConfidenceGater(tau=0.65)
     allocator = ParetoDiversityAllocator()
     consensus_engine = EarlyStoppingDelphiEngine()
 
