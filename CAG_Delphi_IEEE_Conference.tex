@@ -8,6 +8,10 @@
 \usepackage{xcolor}
 \usepackage{booktabs}
 \usepackage{algorithm}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc, fit}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
@@ -103,8 +107,66 @@ Multi-agent deliberation has been deployed across specialized high-stakes domain
 
 \section{The CG-SC Architecture}
 
+\begin{figure*}[t]
+\centering
+\begin{tikzpicture}[
+    >=Latex,
+    node distance=0.9cm and 0.8cm,
+    block/.style={rectangle, draw=black!70, fill=blue!6, rounded corners=3pt, thick, inner sep=5pt, text width=2.6cm, align=center, font=\footnotesize},
+    decision/.style={diamond, draw=black!70, fill=orange!12, aspect=1.8, thick, inner sep=2pt, text width=2.0cm, align=center, font=\footnotesize},
+    cloud/.style={ellipse, draw=black!70, fill=green!12, thick, inner sep=3pt, text width=2.0cm, align=center, font=\footnotesize},
+    subblock/.style={rectangle, draw=black!50, fill=gray!8, rounded corners=2pt, dashed, inner sep=3pt, text width=2.2cm, align=center, font=\scriptsize},
+    line/.style={draw=black!75, thick, ->}
+]
+
+% Tier 1 Nodes
+\node (query) [cloud] {Input Query\\$x \in \mathcal{X}$};
+\node (primary) [block, right=0.6cm of query] {\textbf{Primary Agent $A_0$}\\Generate $y_0$ \& Token Logits};
+\node (ecg) [block, right=0.6cm of primary] {\textbf{Tier 1: ECG}\\$\mathcal{C}(x) = f(\mathcal{H}_{\text{norm}}, \text{Agree})$};
+\node (decide) [decision, right=0.6cm of ecg] {$\mathcal{C}(x) \ge \tau$?};
+
+% Fast-Path vs Consultation Trigger
+\node (fastpath) [cloud, above right=0.5cm and 0.9cm of decide, fill=green!20] {\textbf{Solo Fast-Path}\\Emit $y_0$ ($0$ Peer Tokens)};
+\node (pda) [block, below right=0.5cm and 0.9cm of decide, fill=orange!15] {\textbf{Tier 2: PDA}\\Pareto Allocator\\Select CVF Panel};
+
+% Tier 2 Archetypes
+\node (clan) [subblock, below=0.35cm of pda, xshift=-1.5cm] {\textbf{Clan Agent}\\Ethical \& Relational};
+\node (adhoc) [subblock, below=0.35cm of pda, xshift=1.5cm] {\textbf{Adhocracy Agent}\\Adaptive \& Exploratory};
+\node (hier) [subblock, below=0.2cm of clan] {\textbf{Hierarchy Agent}\\Rule-Based Precedent};
+\node (market) [subblock, below=0.2cm of adhoc] {\textbf{Market Agent}\\Cost-Utility Focused};
+
+% Tier 3 Nodes
+\node (delphi) [block, right=1.6cm of pda, fill=purple!10] {\textbf{Tier 3: Delphi Engine}\\Iterative Deliberation\\$r=1, 2, \dots, R$};
+\node (conv) [decision, below=0.5cm of delphi] {$W_r \ge 0.70$ or\\$\Delta \kappa_r < 0.05$?};
+\node (agg) [block, right=1.0cm of delphi, fill=green!15] {\textbf{Consensus Synthesizer}\\$\hat{y}^* = \arg\max \sum w_i P_i$};
+
+% Output
+\node (output) [cloud, right=0.6cm of agg, fill=blue!15] {\textbf{Final Decision}\\$\hat{y}^*$};
+
+% Connecting Paths
+\path [line] (query) to (primary);
+\path [line] (primary) to (ecg);
+\path [line] (ecg) to (decide);
+\path [line] (decide) |- node[above, font=\scriptsize, near start] {Yes ($z=0$)} (fastpath);
+\path [line] (decide) |- node[below, font=\scriptsize, near start] {No ($z=1$)} (pda);
+\path [line] (fastpath) -| (output);
+\path [line] (pda) to (clan);
+\path [line] (pda) to (adhoc);
+\path [line] (pda) to (hier);
+\path [line] (pda) to (market);
+\path [line] (pda) to (delphi);
+\path [line] (delphi) to (conv);
+\path [line] (conv) to node[left, font=\scriptsize] {No} ++(0,-0.5) -| ++(-1.4,0) |- node[near start, left, font=\scriptsize] {Round $r+1$} (delphi);
+\path [line] (conv.east) -| node[below, font=\scriptsize, near start] {Yes} (agg.south);
+\path [line] (agg) to (output);
+
+\end{tikzpicture}
+\caption{System architecture of Confidence-Gated Selective Consultation (CG-SC). Tier 1 routes high-certainty queries via the Solo Fast-Path ($z=0$) at zero peer token cost. Tier 2 convenes a panel constrained along Pareto Separation dimensions across orthogonal Competing Values Framework archetypes while bounding personality Variety. Tier 3 executes iterative Delphi deliberation with early termination governed by Kendall concordance convergence.}
+\label{fig:architecture}
+\end{figure*}
+
 \subsection{Formal Problem Formulation}
-Let $x \in \mathcal{X}$ denote a decision query sampled from task domain $\mathcal{D}$, and let $\mathcal{Y}$ represent the space of valid decision outcomes. A multi-agent system comprises a primary agent $A_0$ and a pool of $M$ candidate peer agents $\{A_1, A_2, \dots, A_M\}$. Each agent $A_i$ is parametrized by an underlying LLM backbone $\theta_i$, an assigned persona profile $\phi_i$, and an influence weight $w_i$.
+Let $x \in \mathcal{X}$ denote a decision query sampled from task domain $\mathcal{D}$, and let $\mathcal{Y}$ represent the space of valid decision outcomes with ground truth $y^*$. A multi-agent system comprises a primary agent $A_0$ and a pool of $M$ candidate peer agents $\{A_1, A_2, \dots, A_M\}$. Each agent $A_i$ is parametrized by an underlying LLM backbone $\theta_i$, an assigned persona profile $\phi_i$, and an influence weight $w_i$.
 
 In an unconditional system, the final decision $\hat{y}$ is obtained via a joint consultation mapping:
 \begin{equation}
@@ -115,11 +177,21 @@ where $R$ is a fixed number of communication rounds. The token expenditure $\mat
 \mathcal{T}_{\text{uncond}} = \sum_{r=1}^R \sum_{i=0}^M \text{Tokens}(A_i^{(r)})
 \end{equation}
 
-In CG-SC, consultation is governed by an adaptive routing indicator $z \in \{0, 1\}$ determined by Tier 1:
+In CG-SC, consultation is formulated as an adaptive meta-decision governed by a binary routing variable $z \in \{0, 1\}$ determined by Tier 1 epistemic confidence:
 \begin{equation}
 \hat{y}_{\text{CG-SC}} = (1 - z) \cdot y_0 + z \cdot \Psi(x, A_0, \mathcal{A}_{\text{sel}}; r^*)
 \end{equation}
-where $\mathcal{A}_{\text{sel}} \subseteq \{A_1, \dots, A_M\}$ is a Pareto-allocated peer subset, and $r^* \le R$ is dynamically terminated.
+where $\mathcal{A}_{\text{sel}} \subseteq \{A_1, \dots, A_M\}$ is a Pareto-allocated peer subset, and $r^* \le R$ is dynamically terminated upon consensus convergence.
+
+The global system objective minimizes the expected task loss regularized by computational token expenditure:
+\begin{equation}
+\min_{\tau \in [0, 1]} \mathcal{J}(\tau) = \mathbb{E}_{x \sim \mathcal{D}} \left[ \ell(\hat{y}_{\text{CG-SC}}(x, \tau), y^*) + \lambda \cdot \mathcal{T}(x, \tau) \right]
+\end{equation}
+where $\ell(\cdot)$ denotes the decision error loss, $\lambda > 0$ represents the unit penalty per consumed token, and total token spend is given by:
+\begin{equation}
+\mathcal{T}(x, \tau) = (1 - z) \cdot \mathcal{T}_{\text{solo}} + z \cdot \mathcal{T}_{\text{delphi}}(r^*)
+\end{equation}
+As illustrated in Fig.~\ref{fig:architecture}, consultation is invoked strictly when the expected accuracy gain $\Delta \mathcal{A}(x)$ outweighs the marginal cost $\lambda \Delta \mathcal{T}(x)$.
 
 \subsection{Tier 1: Epistemic Confidence Gating (ECG)}
 The primary agent $A_0$ ingests $x$ and generates an initial candidate response $y_0$ while producing token probability distributions. To construct a calibrated confidence metric $\mathcal{C}(x) \in [0, 1]$, ECG integrates predictive entropy with semantic consistency over $K$ sampled reasoning chains:
@@ -164,9 +236,55 @@ PDA characterizes candidate configurations across three explicit diversity metri
     \begin{equation}
     S = \frac{2}{m(m-1)} \sum_{i=1}^{m-1} \sum_{j=i+1}^m \|\mathbf{b}_i - \mathbf{b}_j\|_2
     \end{equation}
-    PDA deploys four orthogonal personas: Clan (ethics and safety), Adhocracy (innovation and adaptation), Market (utility and cost), and Hierarchy (rules and statutory precedents).
+    As depicted in Fig.~\ref{fig:cvf_quadrants}, PDA deploys four orthogonal personas across the CVF space: Clan (ethics and safety), Adhocracy (innovation and adaptation), Market (utility and cost), and Hierarchy (rules and statutory precedents).
     \item \textbf{Disparity ($D$):} Quantified via the coefficient of variation over assigned influence weights $w_i$. PDA enforces egalitarian disparity: $D = 0$ ($w_i = 1/m$).
 \end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=0.72, every node/.style={transform shape}]
+\draw[thick, ->] (-3.6, 0) to (3.6, 0) node[right, font=\footnotesize] {External Focus};
+\draw[thick, <-] (-3.6, 0) node[left, font=\footnotesize] {Internal Focus};
+\draw[thick, ->] (0, -3.2) to (0, 3.2) node[above, font=\footnotesize] {Flexibility};
+\draw[thick, <-] (0, -3.2) node[below, font=\footnotesize] {Stability};
+
+\fill[blue!8, rounded corners=4pt] (-3.3, 0.2) rectangle (-0.2, 2.9);
+\fill[green!8, rounded corners=4pt] (0.2, 0.2) rectangle (3.3, 2.9);
+\fill[yellow!10, rounded corners=4pt] (-3.3, -2.9) rectangle (-0.2, -0.2);
+\fill[orange!8, rounded corners=4pt] (0.2, -2.9) rectangle (3.3, -0.2);
+
+\node[align=center] at (-1.75, 1.6) {
+    \textbf{Clan Archetype} \\
+    \scriptsize Ethical cohesion \\
+    \scriptsize $\mathbf{b}_1 = (-1.0, +1.0)$
+};
+
+\node[align=center] at (1.75, 1.6) {
+    \textbf{Adhocracy Archetype} \\
+    \scriptsize Innovation \\
+    \scriptsize $\mathbf{b}_2 = (+1.0, +1.0)$
+};
+
+\node[align=center] at (-1.75, -1.6) {
+    \textbf{Hierarchy Archetype} \\
+    \scriptsize Rules \& protocol \\
+    \scriptsize $\mathbf{b}_3 = (-1.0, -1.0)$
+};
+
+\node[align=center] at (1.75, -1.6) {
+    \textbf{Market Archetype} \\
+    \scriptsize Cost efficiency \\
+    \scriptsize $\mathbf{b}_4 = (+1.0, -1.0)$
+};
+
+\draw[dashed, red!80!black, thick, <->] (-1.2, 1.2) to (1.2, -1.2);
+\draw[dashed, red!80!black, thick, <->] (1.2, 1.2) to (-1.2, -1.2);
+\node[fill=white, inner sep=2pt, font=\scriptsize, text=red!80!black] at (0, 0) {Separation $S^*$};
+
+\end{tikzpicture}
+\caption{Pareto Separation configuration in the Competing Values Framework (CVF). Agents are positioned at opposing quadrants along continuous belief dimensions to maximize viewpoint coverage while constraining personality Variety.}
+\label{fig:cvf_quadrants}
+\end{figure}
 
 \subsection{Tier 3: Early-Stopping Delphi Consensus Engine (ESCE)}
 Once convened, panel $\mathcal{A}_{\text{sel}} \cup \{A_0\}$ executes a multi-round Delphi protocol. In Round $r=1$, each agent produces an independent position $y_i^{(1)}$ accompanied by rationales. A centralized synthesizer computes a structured summary $\mathcal{S}^{(r)}$ detailing position distributions and key arguments.
@@ -322,7 +440,75 @@ Table \ref{tab:sensitivity} reports parameter sensitivity sweeps across gating t
 \end{center}
 \end{table}
 
-Even at aggressive thresholding ($\tau = 0.55$), CG-SC maintains 73.00\% accuracy while delivering a 62.65\% token reduction.
+Even at aggressive thresholding ($\tau = 0.55$), CG-SC maintains 73.00\% accuracy while delivering a 62.65\% token reduction. Fig.~\ref{fig:pareto_frontier} illustrates the resulting empirical Pareto trade-off frontier.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.98\columnwidth,
+    height=5.6cm,
+    xlabel={Mean Token Consumption per Episode},
+    ylabel={Decision Accuracy (\%)},
+    xmin=0, xmax=6200,
+    ymin=48, ymax=78,
+    grid=both,
+    grid style={line width=.1pt, draw=gray!20},
+    major grid style={line width=.2pt, draw=gray!40},
+    legend pos=south east,
+    legend style={font=\scriptsize, fill=white, fill opacity=0.9},
+    tick label style={font=\scriptsize},
+    label style={font=\footnotesize},
+]
+\addplot[
+    color=red!80!black,
+    mark=square*,
+    mark size=2.5pt,
+    only marks
+] coordinates {
+    (378, 50.80)
+};
+\addlegendentry{Solo Agent Baseline}
+
+\addplot[
+    color=orange!90!black,
+    mark=triangle*,
+    mark size=3pt,
+    only marks
+] coordinates {
+    (5738, 63.40)
+    (5235, 68.40)
+    (4958, 71.80)
+};
+\addlegendentry{Unconditional Baselines}
+
+\addplot[
+    color=blue!80!black,
+    thick,
+    mark=*,
+    mark size=2.2pt
+] coordinates {
+    (1951, 73.00)
+    (2348, 70.40)
+    (2532, 72.00)
+    (2623, 73.80)
+    (2693, 74.60)
+    (2838, 74.00)
+};
+\addlegendentry{CG-SC Frontier ($\tau \in [0.55, 0.85]$)}
+
+\node[above, font=\tiny, color=blue!80!black] at (axis cs:2623, 73.80) {$\tau=0.74$ (Default)};
+\node[left, font=\tiny, color=blue!80!black] at (axis cs:1951, 73.00) {$\tau=0.55$};
+\node[right, font=\tiny, color=blue!80!black] at (axis cs:2693, 74.60) {$\tau=0.78$};
+\node[above right, font=\tiny, color=red!80!black] at (axis cs:378, 50.80) {Solo};
+\node[left, font=\tiny, color=orange!90!black] at (axis cs:5235, 68.40) {Full Delphi};
+\node[above, font=\tiny, color=orange!90!black] at (axis cs:5738, 63.40) {Variety};
+
+\end{axis}
+\end{tikzpicture}
+\caption{Empirical Pareto frontier of Confidence-Gated Selective Consultation (CG-SC) contrasting token expenditure against decision accuracy. Varying gating threshold $\tau$ demonstrates that CG-SC dominates unconditional multi-agent configurations, achieving higher accuracy at less than half the computational expenditure.}
+\label{fig:pareto_frontier}
+\end{figure}
 
 \subsection{Ablation Analysis}
 \begin{itemize}

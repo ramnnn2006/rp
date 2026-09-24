@@ -147,6 +147,27 @@ Following Lee and Kwon’s proof that high personality variety introduces discur
 - **Separation ($S$):** Quantified as the mean pairwise Euclidean distance across continuous belief coordinates $\mathbf{b}_i \in \mathbb{R}^d$ derived from the Competing Values Framework:
 $$S = \frac{2}{m(m-1)} \sum_{i=1}^{m-1} \sum_{j=i+1}^m \|\mathbf{b}_i - \mathbf{b}_j\|_2$$
 Lee and Kwon demonstrated that Separation diversity is Pareto-optimal: agents with contrasting structural perspectives explore the hypothesis space effectively without degenerating into stylistic deadlock. PDA maximizes $S$ subject to domain relevance.
+
+```
+                      FLEXIBILITY / AGILITY
+                                ^
+               Clan Archetype   |   Adhocracy Archetype
+               - Human relations|   - Innovation
+               - Ethical care   |   - Adaptation
+               b1 = (-1, +1)    |   b2 = (+1, +1)
+                                |
+     INTERNAL <-----------------+-----------------> EXTERNAL
+      FOCUS                     |                    FOCUS
+                                |
+            Hierarchy Archetype |   Market Archetype
+            - Statutory rules   |   - Utility
+            - Formal protocol   |   - Cost efficiency
+            b3 = (-1, -1)       |   b4 = (+1, -1)
+                                v
+                      STABILITY / CONTROL
+```
+*Fig. 2. Pareto Separation configuration across the Competing Values Framework (CVF).*
+
 - **Disparity ($D$):** Quantified via the coefficient of variation over assigned influence weights $w_i$:
 $$D = \frac{\sigma(w)}{\mu(w)}$$
 To prevent single-agent authoritarian bias, PDA enforces egalitarian disparity: $D = 0$ ($w_i = 1/m$).
