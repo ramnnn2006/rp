@@ -109,13 +109,14 @@ Multi-agent deliberation has been deployed across specialized high-stakes domain
 
 \begin{figure*}[t]
 \centering
+\resizebox{0.98\textwidth}{!}{%
 \begin{tikzpicture}[
     >=Latex,
     node distance=0.9cm and 0.8cm,
-    block/.style={rectangle, draw=black!70, fill=blue!6, rounded corners=3pt, thick, inner sep=5pt, text width=2.6cm, align=center, font=\footnotesize},
-    decision/.style={diamond, draw=black!70, fill=orange!12, aspect=1.8, thick, inner sep=2pt, text width=2.0cm, align=center, font=\footnotesize},
-    cloud/.style={ellipse, draw=black!70, fill=green!12, thick, inner sep=3pt, text width=2.0cm, align=center, font=\footnotesize},
-    subblock/.style={rectangle, draw=black!50, fill=gray!8, rounded corners=2pt, dashed, inner sep=3pt, text width=2.2cm, align=center, font=\scriptsize},
+    block/.style={rectangle, draw=black!70, fill=blue!6, rounded corners=3pt, thick, inner sep=5pt, text width=2.5cm, align=center, font=\footnotesize},
+    decision/.style={diamond, draw=black!70, fill=orange!12, aspect=1.8, thick, inner sep=2pt, text width=1.9cm, align=center, font=\footnotesize},
+    cloud/.style={ellipse, draw=black!70, fill=green!12, thick, inner sep=3pt, text width=1.9cm, align=center, font=\footnotesize},
+    subblock/.style={rectangle, draw=black!50, fill=gray!8, rounded corners=2pt, dashed, inner sep=3pt, text width=2.0cm, align=center, font=\scriptsize},
     line/.style={draw=black!75, thick, ->}
 ]
 
@@ -126,22 +127,22 @@ Multi-agent deliberation has been deployed across specialized high-stakes domain
 \node (decide) [decision, right=0.6cm of ecg] {$\mathcal{C}(x) \ge \tau$?};
 
 % Fast-Path vs Consultation Trigger
-\node (fastpath) [cloud, above right=0.5cm and 0.9cm of decide, fill=green!20] {\textbf{Solo Fast-Path}\\Emit $y_0$ ($0$ Peer Tokens)};
-\node (pda) [block, below right=0.5cm and 0.9cm of decide, fill=orange!15] {\textbf{Tier 2: PDA}\\Pareto Allocator\\Select CVF Panel};
+\node (fastpath) [cloud, above right=0.6cm and 0.8cm of decide, fill=green!20] {\textbf{Solo Fast-Path}\\Emit $y_0$ ($0$ Peer Tokens)};
+\node (pda) [block, below right=0.6cm and 0.8cm of decide, fill=orange!15] {\textbf{Tier 2: PDA}\\Pareto Allocator\\Select CVF Panel};
 
-% Tier 2 Archetypes
-\node (clan) [subblock, below=0.35cm of pda, xshift=-1.5cm] {\textbf{Clan Agent}\\Ethical \& Relational};
-\node (adhoc) [subblock, below=0.35cm of pda, xshift=1.5cm] {\textbf{Adhocracy Agent}\\Adaptive \& Exploratory};
-\node (hier) [subblock, below=0.2cm of clan] {\textbf{Hierarchy Agent}\\Rule-Based Precedent};
-\node (market) [subblock, below=0.2cm of adhoc] {\textbf{Market Agent}\\Cost-Utility Focused};
+% Tier 2 Archetypes (centered under PDA)
+\node (clan) [subblock, below=0.4cm of pda, xshift=-1.15cm] {\textbf{Clan Agent}\\Ethical Cohesion};
+\node (adhoc) [subblock, below=0.4cm of pda, xshift=1.15cm] {\textbf{Adhocracy Agent}\\Adaptive Innovation};
+\node (hier) [subblock, below=0.25cm of clan] {\textbf{Hierarchy Agent}\\Rule-Based Precedent};
+\node (market) [subblock, below=0.25cm of adhoc] {\textbf{Market Agent}\\Cost-Utility Focus};
 
-% Tier 3 Nodes
-\node (delphi) [block, right=1.6cm of pda, fill=purple!10] {\textbf{Tier 3: Delphi Engine}\\Iterative Deliberation\\$r=1, 2, \dots, R$};
-\node (conv) [decision, below=0.5cm of delphi] {$W_r \ge 0.70$ or\\$\Delta \kappa_r < 0.05$?};
+% Tier 3 Nodes (ample clearance from Tier 2 archetypes)
+\node (delphi) [block, right=2.4cm of pda, fill=purple!10] {\textbf{Tier 3: Delphi Engine}\\Iterative Deliberation\\$r=1, 2, \dots, R$};
+\node (conv) [decision, below=0.6cm of delphi] {$W_r \ge 0.70$ or\\$\Delta \kappa_r < 0.05$?};
 \node (agg) [block, right=1.0cm of delphi, fill=green!15] {\textbf{Consensus Synthesizer}\\$\hat{y}^* = \arg\max \sum w_i P_i$};
 
 % Output
-\node (output) [cloud, right=0.6cm of agg, fill=blue!15] {\textbf{Final Decision}\\$\hat{y}^*$};
+\node (output) [cloud, right=0.8cm of agg, fill=blue!15] {\textbf{Final Decision}\\$\hat{y}^*$};
 
 % Connecting Paths
 \path [line] (query) to (primary);
@@ -156,11 +157,12 @@ Multi-agent deliberation has been deployed across specialized high-stakes domain
 \path [line] (pda) to (market);
 \path [line] (pda) to (delphi);
 \path [line] (delphi) to (conv);
-\path [line] (conv) to node[left, font=\scriptsize] {No} ++(0,-0.5) -| ++(-1.4,0) |- node[near start, left, font=\scriptsize] {Round $r+1$} (delphi);
+\path [line] (conv.west) to node[below, font=\scriptsize] {No} ++(-0.6,0) |- node[near start, left, font=\scriptsize] {Round $r+1$} (delphi.west);
 \path [line] (conv.east) -| node[below, font=\scriptsize, near start] {Yes} (agg.south);
 \path [line] (agg) to (output);
 
-\end{tikzpicture}
+\end{tikzpicture}%
+}
 \caption{System architecture of Confidence-Gated Selective Consultation (CG-SC). Tier 1 routes high-certainty queries via the Solo Fast-Path ($z=0$) at zero peer token cost. Tier 2 convenes a panel constrained along Pareto Separation dimensions across orthogonal Competing Values Framework archetypes while bounding personality Variety. Tier 3 executes iterative Delphi deliberation with early termination governed by Kendall concordance convergence.}
 \label{fig:architecture}
 \end{figure*}
@@ -242,6 +244,7 @@ PDA characterizes candidate configurations across three explicit diversity metri
 
 \begin{figure}[htbp]
 \centering
+\resizebox{0.88\columnwidth}{!}{%
 \begin{tikzpicture}[scale=0.72, every node/.style={transform shape}]
 \draw[thick, ->] (-3.6, 0) to (3.6, 0) node[right, font=\footnotesize] {External Focus};
 \draw[thick, <-] (-3.6, 0) node[left, font=\footnotesize] {Internal Focus};
@@ -281,7 +284,8 @@ PDA characterizes candidate configurations across three explicit diversity metri
 \draw[dashed, red!80!black, thick, <->] (1.2, 1.2) to (-1.2, -1.2);
 \node[fill=white, inner sep=2pt, font=\scriptsize, text=red!80!black] at (0, 0) {Separation $S^*$};
 
-\end{tikzpicture}
+\end{tikzpicture}%
+}
 \caption{Pareto Separation configuration in the Competing Values Framework (CVF). Agents are positioned at opposing quadrants along continuous belief dimensions to maximize viewpoint coverage while constraining personality Variety.}
 \label{fig:cvf_quadrants}
 \end{figure}
@@ -300,7 +304,10 @@ W_r = \frac{12 S}{m^2 (n^3 - n)}
 \end{equation}
 The consensus step difference is $\Delta \kappa_r = |W_r - W_{r-1}|$. Delphi execution terminates at round $r^*$ defined by:
 \begin{equation}
-r^* = \min \left\{ r \;\middle|\; \left(W_r \ge 0.70\right) \lor \left(\Delta \kappa_r < 0.05\right) \lor \left(\mathcal{T}_{\text{spent}}(r) \ge \beta\right) \right\}
+\begin{split}
+r^* = \min \bigl\{ r \;\big|\; & (W_r \ge 0.70) \lor (\Delta \kappa_r < 0.05) \\
+& \lor (\mathcal{T}_{\text{spent}}(r) \ge \beta) \bigr\}
+\end{split}
 \end{equation}
 where $\beta$ is the token budget cap.
 
@@ -308,7 +315,7 @@ where $\beta$ is the token budget cap.
 \caption{Confidence-Gated Selective Consultation Protocol}
 \label{alg:cgsc}
 \begin{algorithmic}[1]
-\REQUIRE Query $x$, Primary $A_0$, Candidate pool $\mathcal{U}$, Thresholds $\tau_1=0.65, \tau_2=0.50$, Target $W_{\text{target}}=0.70$, Stability $\epsilon=0.05$, Budget $\beta$.
+\REQUIRE Query $x$, Primary $A_0$, Candidate pool $\mathcal{U}$, thresholds $\tau_1=0.65$, $\tau_2=0.50$, target $W_{\text{target}}=0.70$, stability $\epsilon=0.05$, budget $\beta$.
 \ENSURE Collective decision $\hat{y}$.
 \STATE $y_0 \sim A_0(x)$
 \STATE Compute normalized token entropy $\mathcal{H}_{\text{norm}}(y_0)$
@@ -371,7 +378,10 @@ Table \ref{tab:real_benchmarks} summarizes empirical performance across all 200 
 
 \begin{table}[htbp]
 \caption{Empirical Benchmark Evaluation on Real Academic Questions ($N = 200$)}
-\begin{center}
+\label{tab:real_benchmarks}
+\centering
+\setlength{\tabcolsep}{4pt}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
 \textbf{Architecture} & \textbf{Acc. (\%)} & \textbf{Avg Tokens/Query} & \textbf{Token Savings} \\
@@ -380,9 +390,8 @@ Solo Agent (No Consult)            & 58.50 & 291.2  & Baseline \\
 Unconditional Delphi \cite{lee2026}& 44.50 & 3182.0 & 0.00\% (Exhaustive) \\
 \textbf{CG-SC (Our Method)}        & \textbf{57.00} & \textbf{1562.9} & \textbf{50.88\% SAVED} \\
 \bottomrule
-\end{tabular}
-\label{tab:real_benchmarks}
-\end{center}
+\end{tabular}%
+}
 \end{table}
 
 \subsection{Eliminating Debate Degeneration on StrategyQA}
@@ -395,7 +404,10 @@ Table \ref{tab:synthetic_results} reports comparative evaluation across the cali
 
 \begin{table}[htbp]
 \caption{Comparative Evaluation Across 500 Decision Episodes}
-\begin{center}
+\label{tab:synthetic_results}
+\centering
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lcccc}
 \toprule
 \textbf{Architecture} & \textbf{Acc. (\%)} & \textbf{Avg Tok.} & \textbf{Lat. (s)} & \textbf{Degrad. (\%)} \\
@@ -406,9 +418,8 @@ Uncond. High Variety \cite{lee2026}      & 63.40 & 5,738 & 6.57 & 13.39 \\
 Uncond. Separation \cite{lee2026}        & 71.80 & 4,958 & 5.04 & 4.33 \\
 \textbf{CG-SC (Ours, $\tau=0.74$)} & \textbf{73.80} & \textbf{2,623} & \textbf{2.80} & \textbf{5.91} \\
 \bottomrule
-\end{tabular}
-\label{tab:synthetic_results}
-\end{center}
+\end{tabular}%
+}
 \end{table}
 
 The experimental findings confirm:
@@ -423,7 +434,10 @@ Table \ref{tab:sensitivity} reports parameter sensitivity sweeps across gating t
 
 \begin{table}[htbp]
 \caption{Sensitivity Analysis of Gating Threshold $\tau$}
-\begin{center}
+\label{tab:sensitivity}
+\centering
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{ccccc}
 \toprule
 \textbf{Threshold ($\tau$)} & \textbf{Acc. (\%)} & \textbf{Avg Tok.} & \textbf{Savings (\%)} & \textbf{Consult Rate (\%)} \\
@@ -435,18 +449,18 @@ Table \ref{tab:sensitivity} reports parameter sensitivity sweeps across gating t
 0.78 & 74.60 & 2,693 & 48.51 & 86.60 \\
 0.85 & 74.00 & 2,838 & 45.65 & 94.20 \\
 \bottomrule
-\end{tabular}
-\label{tab:sensitivity}
-\end{center}
+\end{tabular}%
+}
 \end{table}
 
 Even at aggressive thresholding ($\tau = 0.55$), CG-SC maintains 73.00\% accuracy while delivering a 62.65\% token reduction. Fig.~\ref{fig:pareto_frontier} illustrates the resulting empirical Pareto trade-off frontier.
 
 \begin{figure}[htbp]
 \centering
+\resizebox{\columnwidth}{!}{%
 \begin{tikzpicture}
 \begin{axis}[
-    width=0.98\columnwidth,
+    width=\columnwidth,
     height=5.6cm,
     xlabel={Mean Token Consumption per Episode},
     ylabel={Decision Accuracy (\%)},
@@ -505,7 +519,8 @@ Even at aggressive thresholding ($\tau = 0.55$), CG-SC maintains 73.00\% accurac
 \node[above, font=\tiny, color=orange!90!black] at (axis cs:5738, 63.40) {Variety};
 
 \end{axis}
-\end{tikzpicture}
+\end{tikzpicture}%
+}
 \caption{Empirical Pareto frontier of Confidence-Gated Selective Consultation (CG-SC) contrasting token expenditure against decision accuracy. Varying gating threshold $\tau$ demonstrates that CG-SC dominates unconditional multi-agent configurations, achieving higher accuracy at less than half the computational expenditure.}
 \label{fig:pareto_frontier}
 \end{figure}
